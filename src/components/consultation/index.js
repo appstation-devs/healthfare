@@ -84,7 +84,7 @@ export default function Consultation() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [value]);
+  }, []);
   
   return (
     <React.Fragment>
