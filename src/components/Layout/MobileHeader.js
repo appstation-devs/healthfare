@@ -12,7 +12,7 @@ function MobileHeader() {
   return (
     <div className="mobilemenu">
       <div id="myNav" className="overlay">
-        <a className="closebtn" onClick={closeNav}>&times;</a>
+        <a href={void(0)} className="closebtn" onClick={closeNav}>&times;</a>
         <div class="overlay-content">
           <a href="#home" className="active">HOME</a>
           <div className="megaMenu__dropdown">

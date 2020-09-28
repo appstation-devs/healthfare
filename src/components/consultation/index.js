@@ -68,9 +68,9 @@ function getStepContent(step) {
 export default function Consultation() {
   const classes = useStyles();
 
-  const [value, setValue] = React.useState({
+  // const [value, setValue] = React.useState({
     
-  });
+  // });
 
   const [activeStep, setActiveStep] = React.useState(0);
 
