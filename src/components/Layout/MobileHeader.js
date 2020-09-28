@@ -12,7 +12,7 @@ function MobileHeader() {
   return (
     <div className="mobilemenu">
       <div id="myNav" className="overlay">
-        <a href={void(0)} className="closebtn" onClick={closeNav}>&times;</a>
+        <div className="closebtn" onClick={closeNav} style={{cursor:'pointer'}}>&times;</div>
         <div class="overlay-content">
           <a href="#home" className="active">HOME</a>
           <div className="megaMenu__dropdown">
