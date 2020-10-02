@@ -89,10 +89,13 @@ export default function ConsultationDetails() {
               <Typography variant="h5">{label}</Typography>
             </StepLabel>
             <StepContent style={{paddingTop:'10px'}}>
+              <div>
+                <img src={getStepContent1[index].img} alt={label} />
+              </div>
               <Typography>{getStepContent1[index].p1}</Typography>
               <Typography>{getStepContent1[index].p2}</Typography>
-              <Grid container>
-                <Grid item xs={12} md={8}>
+              {/* <Grid container>
+                <Grid item xs={12} md={8}> */}
                   <List>
                     <ListItem>
                       <ListItemAvatar>
@@ -119,11 +122,11 @@ export default function ConsultationDetails() {
                       <ListItemText primary={getStepContent1[index].l3} />
                     </ListItem>
                   </List>
-                </Grid>
+                {/* </Grid>
                 <Grid item xs={12} md={4} style={{display:'flex',alignItems:'center'}}>
                   <img src={getStepContent1[index].img} alt={label} />
                 </Grid>
-              </Grid>
+              </Grid> */}
 
               <div className={classes.actionsContainer}>
                 <div style={{margin: '30px auto'}}>
