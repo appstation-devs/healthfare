@@ -75,13 +75,23 @@ export default function Consultation() {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
-    window.scrollTo(0, 0);
-    setActiveStep(activeStep + 1);
+    if(window.innerWidth < 500) {
+      window.scrollTo(300, 300);
+      setActiveStep(activeStep + 1);
+    } else {
+      window.scrollTo(400, 400);
+      setActiveStep(activeStep + 1);
+    }
   };
 
   const handleBack = () => {
-    window.scrollTo(0, 0);
-    setActiveStep(activeStep - 1);
+    if(window.innerWidth < 500) {
+      window.scrollTo(300, 300);
+      setActiveStep(activeStep - 1);
+    } else {
+      window.scrollTo(400, 400);
+      setActiveStep(activeStep - 1);
+    }
   };
 
   useEffect(() => {
