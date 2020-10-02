@@ -89,7 +89,7 @@ export default function ConsultationDetails() {
               <Typography variant="h5">{label}</Typography>
             </StepLabel>
             <StepContent style={{paddingTop:'10px'}}>
-              <div>
+              <div style={{margin:'10px auto 15px'}}>
                 <img src={getStepContent1[index].img} alt={label} />
               </div>
               <Typography>{getStepContent1[index].p1}</Typography>
