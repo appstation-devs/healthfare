@@ -46,21 +46,24 @@ const getStepContent1 = [
     p2: `For each ad campaign that you create, you can control how much you're willing to spend on clicks and conversions, which networks and geographical locations you want your ads to show on, and more. For each ad campaign that you create, you can control how much`,
     l1: `For each ad campaign that you create`,
     l2: `Willing to spend on clicks and conversions`,
-    l3: `Locations you want your ads to show on`
+    l3: `Locations you want your ads to show on`,
+    img: `images/consultation1.jpg`
   },
   {
     p1: `An ad group contains one or more ads which target a shared set of keywords. For each ad campaign that you create, you can control how much you are willing to spend on clicks and conversions, which networks and geographical locations you want your ads to show on, and more. For each ad campaign.`,
     p2: `For each ad campaign that you create, you can control how much you're willing to spend on clicks and conversions, which networks and geographical locations you want your ads to show on, and more.`,
     l1: `Willing to spend on clicks and conversions`,
     l2: `For each ad campaign that you create`,
-    l3: `Locations you want your ads to show on`
+    l3: `Locations you want your ads to show on`,
+    img: `images/consultation2.jpg`
   },
   {
     p1: `Try out different ad text to see what brings in the most customers, and learn how to enhance your ads using features like ad extensions. If you run into any problems with your ads, find out how to tell if they're running and how to resolve approval issues.`,
     p2: `For each ad campaign that you create, you can control how much you're willing to spend on clicks and conversions, which networks and geographical locations you want your ads to show on, and more.`,
     l1: `Locations you want your ads to show on`,
     l2: `Willing to spend on clicks and conversions`,
-    l3: `For each ad campaign that you create`
+    l3: `For each ad campaign that you create`,
+    img: `images/consultation3.jpg`
   }
 ];
 
@@ -79,17 +82,17 @@ export default function ConsultationDetails() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={9}>
-          <Stepper activeStep={activeStep} orientation="vertical">
-            {steps.map((label, index) => (
-              <Step key={label}>
-                <StepLabel>
-                  <Typography variant="h5">{label}</Typography>
-                </StepLabel>
-                <StepContent style={{paddingTop:'10px'}}>
-                  <Typography>{getStepContent1[index].p1}</Typography>
-                  <Typography>{getStepContent1[index].p2}</Typography>
+      <Stepper activeStep={activeStep} orientation="vertical">
+        {steps.map((label, index) => (
+          <Step key={label}>
+            <StepLabel>
+              <Typography variant="h5">{label}</Typography>
+            </StepLabel>
+            <StepContent style={{paddingTop:'10px'}}>
+              <Typography>{getStepContent1[index].p1}</Typography>
+              <Typography>{getStepContent1[index].p2}</Typography>
+              <Grid container>
+                <Grid item xs={12} md={8}>
                   <List>
                     <ListItem>
                       <ListItemAvatar>
@@ -116,40 +119,41 @@ export default function ConsultationDetails() {
                       <ListItemText primary={getStepContent1[index].l3} />
                     </ListItem>
                   </List>
-                  <div className={classes.actionsContainer}>
-                    <div style={{margin: '30px auto'}}>
-                      <Button
-                        disabled={activeStep === 0}
-                        onClick={handleBack}
-                        className={classes.button}
-                      >
-                        Back
-                      </Button>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={handleNext}
-                        className={classes.button}
-                      >
-                        {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                      </Button>
-                    </div>
-                  </div>
-                </StepContent>
-              </Step>
-            ))}
-          </Stepper>
-          {activeStep === steps.length && (
-            <Paper square elevation={0} className={classes.resetContainer}>
-              <Typography>Let's Get Started Then</Typography><br />
-              <Link to="/consultation" style={{backgroundColor:'#169b60',color:'#fff', padding:'10px 20px', borderRadius:'10px',margin:'20px auto'}}>Start Consultation</Link>
-            </Paper>
-          )}
-        </Grid>
-        <Grid item xs={12} md={3} style={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'#f07320'}}>
-          <img src="/images/banner.png" alt="Healthfare" />
-        </Grid>
-      </Grid>
+                </Grid>
+                <Grid item xs={12} md={4} style={{display:'flex',alignItems:'center'}}>
+                  <img src={getStepContent1[index].img} alt={label} />
+                </Grid>
+              </Grid>
+
+              <div className={classes.actionsContainer}>
+                <div style={{margin: '30px auto'}}>
+                  <Button
+                    disabled={activeStep === 0}
+                    onClick={handleBack}
+                    className={classes.button}
+                  >
+                    Back
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleNext}
+                    className={classes.button}
+                  >
+                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                  </Button>
+                </div>
+              </div>
+            </StepContent>
+          </Step>
+        ))}
+      </Stepper>
+      {activeStep === steps.length && (
+        <Paper square elevation={0} className={classes.resetContainer}>
+          <Typography>Let's Get Started Then</Typography><br />
+          <Link to="/consultation" style={{backgroundColor:'#169b60',color:'#fff', padding:'10px 20px', borderRadius:'10px',margin:'20px auto'}}>Start Consultation</Link>
+        </Paper>
+      )}
     </div>
   );
 }

@@ -75,10 +75,12 @@ export default function Consultation() {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
+    window.scrollTo(0, 0);
     setActiveStep(activeStep + 1);
   };
 
   const handleBack = () => {
+    window.scrollTo(0, 0);
     setActiveStep(activeStep - 1);
   };
 
