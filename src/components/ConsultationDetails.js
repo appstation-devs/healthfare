@@ -73,10 +73,12 @@ export default function ConsultationDetails() {
   const steps = getSteps();
 
   const handleNext = () => {
+    window.scrollTo(300, 300);
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
+    window.scrollTo(300, 300);
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 

@@ -10,7 +10,6 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "90%",
     margin: "100px auto",
     textAlign: 'center',
   },
@@ -67,7 +66,7 @@ export default function TreatmentKickstart() {
         {steps.map((step) => (
           <Step key={step}>
             <StepLabel>
-              <div><img src={step.img} alt="Healthfare" style={{marginBottom: "30px",width:'50%'}}/></div>
+              <div><img src={step.img} alt="Healthfare" style={{marginBottom: "30px",width:'100%'}}/></div>
               <h4>{step.heading}</h4>
               <p>{step.p}</p>
             </StepLabel>
