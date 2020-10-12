@@ -11,9 +11,7 @@ function HomePage() {
       <Header />
       <MobileHeader />
       <Banner />
-      <div className="container">
-        <TreatmentKickstart  />
-      </div>
+      <TreatmentKickstart  />
       <Footer />
     </>
   )

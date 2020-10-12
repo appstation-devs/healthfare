@@ -11,7 +11,7 @@ function ConsultationPage() {
       <Header />
       <mobileHeader />
       <Breadcrumb link='Consultation' />
-      <div className="container" style={{margin: '50px auto 100px'}}>
+      <div style={{margin: '50px auto 100px'}}>
         <Consultation  />
       </div>
       <Footer />
